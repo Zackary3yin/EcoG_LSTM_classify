@@ -90,20 +90,6 @@ Open **`Main_Pipline.ipynb`** and run cells in order:
 2. Build `Config` (60‑min and/or 10‑min)
 3. Data stats → Model performance → Save perf plots → Saliency → Heatmaps
 
-Tips:
-
-```python
-%matplotlib inline
-from tqdm.notebook import tqdm  # nicer progress bars
-```
-
-Pass `cfg` to heatmap calls so the y‑axis shows real hours:
-
-```python
-plot_saliency_heatmap_from_out(out, block_end_hr=24, cfg=cfg60,
-                               save_path="outputs_lstm/time60min/heatmaps/heatmap_cumulative_to_24h.png",
-                               show=False)
-```
 
 ---
 
@@ -150,19 +136,3 @@ Inside `outputs_lstm/time60min/` and `outputs_lstm/time10min/`:
 ## ♻️ Reproducibility
 
 * Seeds are set internally (42) for eval; feel free to expose `set_seed(42)`.
-* Consider pinning versions in `requirements.txt`.
-* Commit your data snapshot/CSV schema and the exact `FEATURE_LIST` used.
-
----
-
-## 🧯 Troubleshooting
-
-* **Progress bar not visible**: ensure loops use `tqdm(..., file=sys.stdout, dynamic_ncols=True)`; run unbuffered in logs: `python -u run_eeg_pipeline.py`.
-* **Heatmap y‑axis starts at 0**: pass `cfg` to `plot_saliency_heatmap_from_out` (runner & notebook examples do this).
-* **`plt` not defined**: the module’s plotting functions import `matplotlib` where needed; add `import matplotlib.pyplot as plt` if you write new plot code.
-
----
-
-## 📜 License
-
-MIT (or update to your preferred license).
