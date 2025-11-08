@@ -174,7 +174,7 @@ if __name__ == "__main__":
         num_layers=2,             # LSTM layers
         bidirectional=True,       # use BiLSTM
         dropout=0.3,              # dropout rate
-        out_csv="outputs_lstm/time60min/has_epilepsy_lstm_10min.csv",  # output metrics file
+        out_csv="outputs_lstm/time10min/has_epilepsy_lstm_10min.csv",  # output metrics file
         use_duplication=True,     # balance positive/negative classes
         use_pos_weight=True,      # apply pos_weight in BCE loss
         restrict_to_intersection=True,  # keep only features common across patients
