@@ -1,7 +1,28 @@
-"Data/*" 
-"!Data/.gitkeep" 
-"outputs_lstm/" 
-"*.pt" 
-"*.zip" 
-"*.pkl" 
-"__pycache__/" 
+# =========================
+#  EcoG_LSTM_classify .gitignore
+# =========================
+
+# --- Data ---
+Data/*                 # ignore all data
+!Data/.gitkeep         # keep empty Data folder tracked
+
+# --- Outputs ---
+outputs_lstm/          # model outputs, saliency, performance plots, etc.
+
+# --- Model files ---
+*.pt                   # PyTorch checkpoints
+*.pkl                  # Pickle objects
+*.zip                  # zipped results
+
+# --- Python cache ---
+__pycache__/
+*.pyc
+*.pyo
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- IDE / OS files ---
+.vscode/
+.DS_Store
+Thumbs.db
